@@ -1,0 +1,36 @@
+# Python files
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+# Virtual environment
+env/
+venv/
+.venv/
+
+# Django secrets and database
+db.sqlite3
+*.sqlite3
+*.db
+.env
+
+# Logs and temporary files
+*.log
+*.pot
+*.pyc
+*.swp
+*.swo
+*.pid
+
+# Static and media files
+staticfiles/
+media/
+
+# IDE and editor settings
+.vscode/
+.idea/
+
+# Git ignore file
+.DS_Store
+Thumbs.db
