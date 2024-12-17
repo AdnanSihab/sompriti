@@ -42,10 +42,12 @@ def cart(request, total = 0, quantity=0, cart_items=None):
         for cart_item in cart_items:
             total += (cart_item.product.price * cart_item.quantity)
             quantity += cart_item.quantity
-    except ObjectNotExist:
-        pass
+    except Cart.ObjectNotExist:
+        cart_items = []  # If cart doesn't exist, initialize as empty
+        total = 0  # Total is 0 if no cart
+        quantity = 0  # Quantity is 0 if no cart
 
-        context = {
+    context = {
         'total': total,
         'quantity': quantity,
         'cart_items': cart_items,
