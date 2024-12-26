@@ -77,6 +77,10 @@ WSGI_APPLICATION = 'sompriti.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.Account'
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 

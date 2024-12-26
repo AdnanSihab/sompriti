@@ -3,6 +3,7 @@ from .forms import RegistrationForm
 from .models import Account
 from django.contrib import messages, auth
 
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -15,27 +16,28 @@ def register(request):
             username = email.split("@")[0]
             user = Account.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
             user.phone_number = phone_number
+            user.is_active = True
             user.save()
-            messages.success(request, 'Registration Successfull')
+            messages.success(request, 'Registration Successful')
             return redirect('register')
     else:
         form = RegistrationForm()
+    
     context = {
         'form': form,
     }
-    return render(request, 'accounts/register.html', context)
+    return render(request, 'accounts/register.html', context)  # This line should be outside the if/else block
 
 
 def login(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-
-        user = auth.authenticate(email=email, password=password)
+        
+        user = auth.authenticate(username=email, password=password)  # Change email to username here
 
         if user is not None:
             auth.login(request, user)
-            # messages.success(request, 'You are now logged in.')
             return redirect('home')
         else:
             messages.error(request, 'Invalid login credentials')
@@ -45,43 +47,41 @@ def login(request):
 def logout(request):
     return
 
-
-
-# from django.shortcuts import render, redirect
-# from django.contrib.auth import authenticate, login, logout
-# from django.contrib import messages
-# from .forms import RegistrationForm
-
-# # Register View
 # def register(request):
 #     if request.method == 'POST':
 #         form = RegistrationForm(request.POST)
 #         if form.is_valid():
-#             user = form.save(commit=False)
-#             user.set_password(form.cleaned_data['password'])  # Hash the password
+#             first_name = form.cleaned_data['first_name']
+#             last_name = form.cleaned_data['last_name']
+#             phone_number = form.cleaned_data['phone_number']
+#             email = form.cleaned_data['email']
+#             password = form.cleaned_data['password']
+#             username = email.split("@")[0]
+#             user = Account.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
+#             user.phone_number = phone_number
 #             user.save()
-#             messages.success(request, "Account created successfully. You can now log in.")
-#             return redirect('login')
+#             messages.success(request, 'Registration Successfull')
+#             return redirect('register')
 #     else:
 #         form = RegistrationForm()
-#     return render(request, 'accounts/register.html', {'form': form})
+#     context = {
+#         'form': form,
+#     }
+#     return render(request, 'accounts/register.html', context)
 
-# # Login View
-# def user_login(request):
+# def login(request):
 #     if request.method == 'POST':
-#         user = authenticate(
-#             request, 
-#             username=request.POST['username'], 
-#             password=request.POST['password']
-#         )
-#         if user:
-#             login(request, user)
-#             return redirect('home')
-#         messages.error(request, "Invalid credentials")
-#     return render(request, 'accounts/login.html')
+#         email = request.POST['email']
+#         password = request.POST['password']
+        
+#         user = auth.authenticate(email=email, password=password)
 
-# # Logout View
-# def user_logout(request):
-#     logout(request)
-#     return redirect('login')
+#         if user is not None:
+#             auth.login(request, user)
+#             # messages.success(request, 'You are now logged in.')
+#             return redirect('home')
+#         else:
+#             messages.error(request, 'Invalid login credentials')
+#             return redirect('login')
+#     return render(request, 'accounts/login.html')
 
