@@ -46,13 +46,13 @@ class Variation(models.Model):
 
 
     # these are extra instead of this unicode
-    def __unicode__(self):
-        return self.variation_value
+    # def __unicode__(self):
+    #     return self.variation_value
 
-    # def __str__(self):
-    #     return f"{self.get_variation_category_display()}: {self.variation_value}"
+    def __str__(self):
+        return f"{self.get_variation_category_display()}: {self.variation_value}"
 
-    # # Optional method to show category nicely
-    # def get_variation_category_display(self):
-    #     # Get human-readable name for variation category (size/color)
-    #     return dict(variation_category_choice).get(self.variation_category, self.variation_category)
+    # Optional method to show category nicely
+    def get_variation_category_display(self):
+        # Get human-readable name for variation category (size/color)
+        return dict(variation_category_choice).get(self.variation_category, self.variation_category)
