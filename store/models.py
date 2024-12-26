@@ -45,9 +45,9 @@ class Variation(models.Model):
     objects = VariationManager()
 
 
-    # these are extra instead of this unicode
     # def __unicode__(self):
     #     return self.variation_value
+    # these are extra instead of this unicode
 
     def __str__(self):
         return f"{self.get_variation_category_display()}: {self.variation_value}"
