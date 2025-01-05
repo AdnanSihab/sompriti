@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RegistrationForm, UserForm, UserProfileForm
 from .models import Account, UserProfile
@@ -8,15 +7,6 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
 # Verification email
-=======
-from django.shortcuts import render, redirect
-from .forms import RegistrationForm
-from .models import Account
-from django.contrib import messages, auth
-from django.contrib.auth.decorators import login_required
-
-#Verification Email
->>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -90,7 +80,7 @@ def register(request):
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
-            # messages.success(request, 'Thank you for registering with us. We have sent you a verification email to your email address [rathan.kumar@gmail.com]. Please verify it.')
+            # messages.success(request, 'Thank you for registering with us. We have sent you a verification email to your email address. Please verify it.')
             return redirect('/accounts/login/?command=verification&email='+email)
     else:
         form = RegistrationForm()
