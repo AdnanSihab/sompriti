@@ -1,9 +1,5 @@
 from django import forms
-<<<<<<< HEAD
 from .models import Account, UserProfile
-=======
-from .models import Account
->>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 
 
 class RegistrationForm(forms.ModelForm):
@@ -12,18 +8,13 @@ class RegistrationForm(forms.ModelForm):
         'class': 'form-control',
     }))
     confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={
-<<<<<<< HEAD
         'placeholder': 'Confirm Password'
     }))
 
-=======
-        'placeholder': 'Confirm Password', 'class': 'form-control',}))
->>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
     class Meta:
         model = Account
         fields = ['first_name', 'last_name', 'phone_number', 'email', 'password']
 
-<<<<<<< HEAD
     def clean(self):
         cleaned_data = super(RegistrationForm, self).clean()
         password = cleaned_data.get('password')
@@ -33,8 +24,6 @@ class RegistrationForm(forms.ModelForm):
             raise forms.ValidationError(
                 "Password does not match!"
             )
-=======
->>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
@@ -46,7 +35,6 @@ class RegistrationForm(forms.ModelForm):
             self.fields[field].widget.attrs['class'] = 'form-control'
 
 
-<<<<<<< HEAD
 class UserForm(forms.ModelForm):
     class Meta:
         model = Account
@@ -67,14 +55,3 @@ class UserProfileForm(forms.ModelForm):
         super(UserProfileForm, self).__init__(*args, **kwargs)
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control'
-=======
-    def clean(self):
-        cleaned_data = super(RegistrationForm, self).clean()
-        password = cleaned_data.get('password')
-        confirm_password = cleaned_data.get('confirm_password')
-
-        if password != confirm_password:
-            raise forms.ValidationError(
-                "Password does not match!"
-            )
->>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
  
@@ -155,41 +154,3 @@ dmypy.json
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
-=======
-# Python files
-__pycache__/
-*.py[cod]
-*$py.class
-.Python
-
-# Virtual environment
-env/
-venv/
-.venv/
-
-# Django secrets and database
-db.sqlite3
-*.sqlite3
-*.db
-.env
-
-# Logs and temporary files
-*.log
-*.pot
-*.pyc
-*.swp
-*.swo
-*.pid
-
-# Static and media files
-staticfiles/
-media/
-
-# IDE and editor settings
-.vscode/
-.idea/
-
-# Git ignore file
-.DS_Store
-Thumbs.db
->>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
