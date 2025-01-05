@@ -1,11 +1,16 @@
 from django.db import models
 from category.models import Category
 from django.urls import reverse
+<<<<<<< HEAD
 from accounts.models import Account
 from django.db.models import Avg, Count
 
 # Create your models here.
 
+=======
+
+# Create your models here.
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 class Product(models.Model):
     product_name    = models.CharField(max_length=200, unique=True)
     slug            = models.SlugField(max_length=200, unique=True)
@@ -24,6 +29,7 @@ class Product(models.Model):
     def __str__(self):
         return self.product_name
 
+<<<<<<< HEAD
     def averageReview(self):
         reviews = ReviewRating.objects.filter(product=self, status=True).aggregate(average=Avg('rating'))
         avg = 0
@@ -37,6 +43,8 @@ class Product(models.Model):
         if reviews['count'] is not None:
             count = int(reviews['count'])
         return count
+=======
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 
 class VariationManager(models.Manager):
     def colors(self):
@@ -45,6 +53,10 @@ class VariationManager(models.Manager):
     def sizes(self):
         return super(VariationManager, self).filter(variation_category='size', is_active=True)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 variation_category_choice = (
     ('color', 'color'),
     ('size', 'size'),
@@ -59,6 +71,7 @@ class Variation(models.Model):
 
     objects = VariationManager()
 
+<<<<<<< HEAD
     def __str__(self):
         return self.variation_value
 
@@ -88,3 +101,17 @@ class ProductGallery(models.Model):
     class Meta:
         verbose_name = 'productgallery'
         verbose_name_plural = 'product gallery'
+=======
+
+    def __unicode__(self):
+        return self.variation_value
+    # these are extra instead of this unicode
+
+    # def __str__(self):
+    #     return f"{self.get_variation_category_display()}: {self.variation_value}"
+
+    # # Optional method to show category nicely
+    # def get_variation_category_display(self):
+    #     # Get human-readable name for variation category (size/color)
+    #     return dict(variation_category_choice).get(self.variation_category, self.variation_category)
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b

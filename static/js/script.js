@@ -7,11 +7,19 @@ $(document).ready(function() {
 
     /* ///////////////////////////////////////
 
+<<<<<<< HEAD
     THESE FOLLOWING SCRIPTS ONLY FOR BASIC USAGE,
     For sliders, interactions and other
 
     */ ///////////////////////////////////////
 
+=======
+    THESE FOLLOWING SCRIPTS ONLY FOR BASIC USAGE, 
+    For sliders, interactions and other
+
+    */ ///////////////////////////////////////
+    
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 
 	//////////////////////// Prevent closing from click inside dropdown
     $(document).on('click', '.dropdown-menu', function (e) {
@@ -54,10 +62,19 @@ $(document).ready(function() {
 
 
 
+<<<<<<< HEAD
 
 });
 // jquery end
 
 setTimeout(function(){
   $('#message').fadeOut('slow')
+=======
+    
+}); 
+// jquery end
+
+setTimeout(function(){
+    $('#message').fadeOut('slow')
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 }, 4000)

@@ -20,13 +20,21 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+<<<<<<< HEAD
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('securelogin/', admin.site.urls),
+=======
+    path('admin/', admin.site.urls),
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
     path('', views.home, name='home'),
     path('store/', include('store.urls')),
     path('cart/', include('carts.urls')),
     path('accounts/', include('accounts.urls')),
+<<<<<<< HEAD
 
     # ORDERS
     path('orders/', include('orders.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+=======
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b

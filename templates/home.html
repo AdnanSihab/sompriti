@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 {% extends 'base.html' %}
@@ -14,6 +15,21 @@
 <div class="intro-banner-wrap">
 	<img src="{% static 'images/banners/1.jpg' %}" class="img-fluid rounded">
 </div> -->
+=======
+{% extends 'base.html' %}
+
+{% load static %}
+ 
+{% block content %}
+
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<div class="intro-banner-wrap">
+	<img src="{% static 'images/banners/2.png' %}" class="img-fluid rounded">
+</div>
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 
 </div> <!-- container //  -->
 </section>
@@ -28,7 +44,11 @@
 	<h3 class="section-title">Popular products</h3>
 </header><!-- sect-heading -->
 
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 <div class="row">
 	{% for product in products %}
 	<div class="col-md-3">
@@ -36,6 +56,7 @@
 			<a href="{{ product.get_url }}" class="img-wrap"> <img src="{{ product.images.url }}"> </a>
 			<figcaption class="info-wrap">
 				<a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
+<<<<<<< HEAD
 				<div class="price mt-1">$ {{ product.price }}</div> <!-- price-wrap.// -->
 				<div class="rating-star">
 					<span>
@@ -46,6 +67,9 @@
 						<i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
 						</span>
 				</div>
+=======
+				<div class="price mt-1">{{ product.price }}</div> <!-- price-wrap.// -->
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 			</figcaption>
 		</div>
 	</div> <!-- col.// -->
@@ -64,4 +88,8 @@
 </body>
 </html>
 
+<<<<<<< HEAD
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b

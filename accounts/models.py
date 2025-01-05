@@ -60,8 +60,13 @@ class Account(AbstractBaseUser):
 
     objects = MyAccountManager()
 
+<<<<<<< HEAD
     def full_name(self):
         return f'{self.first_name} {self.last_name}'
+=======
+    # def full_name(self):
+    #     return f'{self.first_name} {self.last_name}'
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 
     def __str__(self):
         return self.email
@@ -70,6 +75,7 @@ class Account(AbstractBaseUser):
         return self.is_admin
 
     def has_module_perms(self, add_label):
+<<<<<<< HEAD
         return True
 
 
@@ -87,3 +93,6 @@ class UserProfile(models.Model):
 
     def full_address(self):
         return f'{self.address_line_1} {self.address_line_2}'
+=======
+        return True
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b

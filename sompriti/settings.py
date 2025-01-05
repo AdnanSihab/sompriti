@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 from decouple import config
+=======
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -21,10 +24,17 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool) # True
+=======
+SECRET_KEY = 'zj6qiz^cueeilnqdz*z&%j@$vhc#c!effqdnseze-8u=1(w4!t'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 
 ALLOWED_HOSTS = []
 
@@ -42,8 +52,11 @@ INSTALLED_APPS = [
     'accounts',
     'store',
     'carts',
+<<<<<<< HEAD
     'orders',
     'admin_honeypot',
+=======
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 ]
 
 MIDDLEWARE = [
@@ -54,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+<<<<<<< HEAD
     'django_session_timeout.middleware.SessionTimeoutMiddleware',
 ]
 
@@ -62,6 +76,10 @@ SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
 SESSION_TIMEOUT_REDIRECT = 'accounts/login'
 
 
+=======
+]
+
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 ROOT_URLCONF = 'sompriti.urls'
 
 TEMPLATES = [
@@ -86,9 +104,19 @@ WSGI_APPLICATION = 'sompriti.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.Account'
 
+<<<<<<< HEAD
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+=======
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -133,9 +161,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+<<<<<<< HEAD
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR /'static'
+=======
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
 STATICFILES_DIRS = [
     'sompriti/static',
 ]
@@ -152,8 +185,16 @@ MESSAGE_TAGS = {
 
 
 # SMTP configuration
+<<<<<<< HEAD
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+=======
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sihab2075@gmail.com'
+EMAIL_HOST_PASSWORD = 'asdfghjkl'
+EMAIL_USE_TLS = True
+>>>>>>> a1a51b03e61ddd11f3321dc643d2ca2a3ab46f5b
